@@ -60,13 +60,19 @@ namespace raden
             {// ANDERS   antwoord := Helaas, het te raden getal is niet <poging>, wel <willekeurigetal>.
                 antwoord = $"helaas het getal dat we zochten is niet {poging} maar wel {willekeuriggetal}";
             }
-            
-            
+
+
 
 
             //output
             // TOON     antwoord
+            Console.WriteLine();
+            Console.WriteLine(antwoord);
 
+            //wachten
+            Console.WriteLine();
+            Console.WriteLine("druk op enter om af te sluiten");
+            Console.ReadKey();
            
             
         }
