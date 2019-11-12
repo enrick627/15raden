@@ -34,9 +34,11 @@ namespace raden
     {
         static void Main(string[] args)
         {   //DECLARATIES
+            const int ondergrens = 0;
+            const int bovengrens = 5;
             byte poging, willekeuriggetal;
             string antwoord;
-
+            bool isgeldiggetal;
 
 
 
@@ -46,20 +48,28 @@ namespace raden
 
             //input
             //VRAAG     poging
-            Console.WriteLine("raad het getal");
-            poging = byte.Parse( Console.ReadLine());
+            Console.WriteLine("raad het getal tussen {0} en {1}:", ondergrens, bovengrens);
+            isgeldiggetal = byte.TryParse( Console.ReadLine(), out poging);
 
             //processing
-            // ALS      poging=willekeuriggetal
-            if (poging==willekeuriggetal)
-            {// DAN      antwoord := proficiat, we zochten inderdaad <willekeuriggetal>!
-                antwoord = $"proficiat het getal dat we zochten is inderdaad juist";
-
+            if (isgeldiggetal==false)
+            {
+                antwoord = $"gelieve een geheel getal int te geven {ondergrens}, {bovengrens}";
             }
             else
-            {// ANDERS   antwoord := Helaas, het te raden getal is niet <poging>, wel <willekeurigetal>.
-                antwoord = $"helaas het getal dat we zochten is niet {poging} maar wel {willekeuriggetal}";
+            {//invoer is wel geldig
+              // ALS      poging=willekeuriggetal
+                if (poging == willekeuriggetal)
+                {// DAN      antwoord := proficiat, we zochten inderdaad <willekeuriggetal>!
+                    antwoord = $"proficiat het getal dat we zochten is inderdaad juist";
+
+                }
+                else
+                {// ANDERS   antwoord := Helaas, het te raden getal is niet <poging>, wel <willekeurigetal>.
+                    antwoord = $"helaas het getal dat we zochten is niet {poging} maar wel {willekeuriggetal}";
+                }
             }
+            
 
 
 
