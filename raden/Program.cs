@@ -42,12 +42,12 @@ namespace raden
 
             //  * BEREKEN   willekeuriggetal ([1-5])(https://stackoverflow.com/questions/2706500/how-do-i-generate-a-random-int-number)
             Random rnd = new Random();
-            willekeuriggetal =(byte) rnd.Next(1, 6);
+            willekeuriggetal =(byte) rnd.Next(1,6);
 
             //input
             //VRAAG     poging
             Console.WriteLine("raad het getal");
-            poging = byte.Parse(Console.ReadLine());
+            poging = byte.Parse( Console.ReadLine());
 
             //processing
             // ALS      poging=willekeuriggetal
